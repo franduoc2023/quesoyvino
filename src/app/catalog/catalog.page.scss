@@ -1,0 +1,265 @@
+/* Fondo negro global de la página de catálogo */
+.catalog {
+  background: #000;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==================== */
+/*       TITLE TIPO ABOUT */
+/* ==================== */
+
+.catalog-title {
+  position: relative;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  margin: 20px auto 10px;
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Icono izquierda */
+.catalog-title::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-image: url("https://unpkg.com/ionicons@7.1.2/dist/svg/pizza-outline.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Icono derecha */
+.catalog-title::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-image: url("https://unpkg.com/ionicons@7.1.2/dist/svg/wine-outline.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* ==================== */
+/*       SEARCHBAR       */
+/* ==================== */
+
+.catalog-search {
+  width: 480px;
+  max-width: 90%;
+  --background: #1c1c1c;
+  --color: #fff;
+  --placeholder-color: #777;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+/* ==================== */
+/*       TOGGLE TYPE     */
+/* ==================== */
+
+.catalog-toggle {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+/* ==================== */
+/*   LISTA Y TARJETAS    */
+/* ==================== */
+
+.catalog-list {
+  width: 480px;
+  max-width: 90%;
+}
+
+/* Card */
+.catalog-card {
+  background: #111;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* Imagen */
+.catalog-image {
+  width: 100%;
+  height: 360px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 12px;
+}
+
+/* Info */
+.catalog-item-title {
+  margin: 16px 0 4px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.catalog-item-origin {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* ==================== */
+/*   MENSAJE SIN DATA    */
+/* ==================== */
+
+.empty-state {
+  margin-top: 24px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ==================== */
+/*      PAGINACIÓN       */
+/* ==================== */
+
+.pagination {
+  margin-top: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.page-info {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+
+/* ==================== */
+/*     EMPTY STATE       */
+/* ==================== */
+
+.empty-state-card {
+  width: 90%;
+  max-width: 550px;
+  margin: 40px auto 60px;   /* separa del footer */
+  padding: 30px 24px;
+  
+  background: #ffffff;
+  border-radius: 16px;
+  text-align: center;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.empty-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.empty-msg {
+  font-size: 14px;
+  color: #444;
+  opacity: 0.8;
+  margin: 0;
+}
+
+
+.btn-wines {
+  --background: #6a0d25;       /* vino tinto */
+  --color: #fff;
+  --border-radius: 12px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --border-color: #6a0d25;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(106, 13, 37, 0.35);
+}
+
+.btn-wines[fill="outline"] {
+  --background: transparent;
+  --color: #6a0d25;
+}
+
+
+.btn-cheese {
+  --background: #c29d59;      /* dorado elegante */
+  --color: #000;
+  --border-radius: 12px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --border-color: #c29d59;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(194, 157, 89, 0.35);
+}
+
+.btn-cheese[fill="outline"] {
+  --background: transparent;
+  --color: #c29d59;
+}
+
+
+.catalog-field {
+  font-size: 14px;
+  color: #ddd;
+  margin: 4px 0;
+  line-height: 1.4;
+}
+
+.catalog-field .label {
+  font-weight: 700;
+  color: #fff;
+  margin-right: 6px;
+}
+
+/* Contenedor general de los detalles */
+.catalog-detail {
+  margin-top: 14px;
+  color: #eee;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 12px;
+  background: #0d0d0d;
+  border-radius: 12px;
+  border: 1px solid #222;
+}
+
+/* Etiquetas (Origin:, Price:, etc.) */
+.catalog-detail .label {
+  font-weight: 700;
+  color: #ffffff; /* dorado elegante */
+  display: inline-block;
+  width: 110px; /* alinea todas las etiquetas */
+}
+
+/* Descriptions largas */
+.catalog-detail .description {
+  margin-top: 4px;
+  color: #ccc;
+}
+
+
+.catalog-item-title {
+  text-align: center;     /* centra el texto */
+  margin: 16px 0 8px;     /* separaciones más elegantes */
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}

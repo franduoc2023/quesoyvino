@@ -1,0 +1,88 @@
+<!-- src/app/catalog/catalog.page.html -->
+<div class="page-content catalog">
+
+  <!-- TÍTULO TIPO ABOUT -->
+  <h1 class="catalog-title">CATALOG</h1>
+
+  <!-- BUSCADOR -->
+  <ion-searchbar
+    class="catalog-search"
+    placeholder="Search..."
+    (ionInput)="onSearch($event)">
+  </ion-searchbar>
+
+  <!-- BOTONES WINES / CHEESE -->
+  <div class="catalog-toggle">
+    <ion-button    class="btn-wines"
+      [fill]="selectedType === 'wines' ? 'solid' : 'outline'"
+      (click)="onSelect('wines')">
+      WINES
+    </ion-button>
+
+    <ion-button    class="btn-cheese"
+      [fill]="selectedType === 'cheeses' ? 'solid' : 'outline'"
+      (click)="onSelect('cheeses')">
+      CHEESE
+    </ion-button>
+  </div>
+
+  <!-- LISTA DE PRODUCTOS (solo si hay resultados) -->
+  <div *ngIf="filteredList.length > 0; else noResults" class="catalog-list">
+    <div class="catalog-card" *ngFor="let item of paginatedList">
+
+      <img [src]="item.imageUrl" class="catalog-image" />
+<h3 class="catalog-item-title">{{ item.nameEn }}</h3>
+
+<div class="catalog-detail">
+  <p><span class="label">Origin:</span> {{ item.origin }}</p>
+  <p><span class="label">Flavors:</span> {{ item.flavors }}</p>
+  <p><span class="label">Price:</span> ${{ item.price }}</p>
+
+  <p class="label">Description:</p>
+  <p class="description">{{ item.descriptionEn }}</p>
+</div>
+
+
+
+    </div>
+  </div>
+
+ 
+
+<ng-template #noResults>
+  <div class="empty-state-card">
+    <h2 class="empty-title">Product not found</h2>
+    <p class="empty-msg">Try looking for another wine or cheese.
+</p>
+  </div>
+</ng-template>
+
+
+
+
+  <!-- PAGINACIÓN (solo si hay más de una página) -->
+  <div
+    class="pagination"
+    *ngIf="filteredList.length > 0 && totalPages > 1">
+
+    <ion-button
+      size="small"
+      (click)="prevPage()"
+      [disabled]="currentPage === 1">
+      Prev
+    </ion-button>
+
+    <span class="page-info">
+      {{ currentPage }} / {{ totalPages }}
+    </span>
+
+    <ion-button
+      size="small"
+      (click)="nextPage()"
+      [disabled]="currentPage === totalPages">
+      Next
+    </ion-button>
+
+  </div>
+
+</div>

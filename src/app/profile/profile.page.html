@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Mi Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Perfil</h2>
+
+  <ng-container *ngIf="userProfile; else noProfile">
+    <p><strong>Nombre:</strong> {{ userProfile.name }}</p>
+    <p><strong>Email:</strong> {{ userProfile.email }}</p>
+  </ng-container>
+
+  <ng-template #noProfile>
+    <p>No hay información disponible.</p>
+  </ng-template>
+
+  <ion-button expand="block" routerLink="/">
+    Volver al Home
+  </ion-button>
+</ion-content>
